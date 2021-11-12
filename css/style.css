@@ -1,12 +1,19 @@
+:root {
+  --titulos-color: #ffffff; 
+  --secondary-color: #EEEEEE;
+  --text-color: #EEEEEE;
+  --bkg-color: #000000;
+  --color-fondo: antiquewhite;
+}
+
 html {
     height: 100%;
   }
   body {
-
     margin:0;
     padding:0;
     font-family: sans-serif;
-    background-color: antiquewhite;
+    background-color: var(--color-fondo);
   }
   
   .contenedor {
@@ -15,13 +22,13 @@ html {
     top: 45%;
     left: 50%;
     width: 35%;
-    min-width: 300px;
+    min-width: 400px;
     max-width: 500px;
     min-height: 500px;
     max-height: 700px;
     padding: 40px;
     transform: translate(-50%, -50%);
-    background: rgb(8, 32, 97);
+    background: var(--bkg-color);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
@@ -29,67 +36,68 @@ html {
   h1 {
     margin: 0;
     padding: 0 0 20px;
-    color: #fff;
+    color: var(--titulos-color);
     text-align: center;
-    font-size: 22px;
-  }
-  p {
-    margin: 0;
-    padding: 0 0 20px;
-    color: rgb(224, 224, 224);
-    text-align: center;
-    font-size: 18px;
+    font-family: sans-serif;
+    font-size: 55px;
   }
   label {
+    font-family: sans-serif;
     padding: 0;
-    font-size: 14px;
+    font-size: 25px;
     font-weight: normal;
-    color: #fff;
+    color: var(--text-color);
   }
+  
 .Escrito{
     height: 100px;
     border-style: none;
+    font-family: sans-serif;
     font-size: 20px;
-    font-weight: bold;
     width: 100%;
     border-radius: 0px;
     background-color: transparent;
     font-size: 20px;
-    font-weight: bold;
     outline: none;
     right: 0px;
-    color:#ffffff ;
+    color:var(--text-color) ;
     border-bottom:1px solid rgba(255,255,255,.5);
-    
+
+  }
+  ::placeholder {
+    color: var(--secondary-color);
   }
 select{ /* BARRA SELECT IDIOMA */
+    font-family: sans-serif;
     display: flex;
     flex-direction: column;
     background-color: transparent;
-    color:#ffffff;
+    color:var(--text-color);
+    height: 30px;
+    font-size: 20px;
     width: 100%;
     border-radius: 15px;
 }
 option{
     color:#0d1b2e;
-    background-color: rgba(2, 111, 201, 0.308);
+    background-color: rgba(168, 168, 168, 0.308);
+    backdrop-filter: blur(5px);
 }
 
 .resultado{
+  font-family: sans-serif;
   height: 30%;
   border-style: none;
   font-size: 20px;
-  font-weight: bold;
   width: 100%;
   background-color: transparent;
-  font-size: 20px;
-  font-weight: bold;
   outline: none;
   right: 0px;
-  color:#ffffff ;
+  color:var(--text-color) ;
 }
 
 .boton{
+    font-family: sans-serif;
     height: 50px;
     border-style: none;
     font-size: 20px;
@@ -99,7 +107,7 @@ option{
     width: 100%;
     border-radius: 0px;
     background-color: transparent;
-    color:#ffffff ;
+    color:var(--titulos-color) ;
     border-bottom:1px solid rgba(255,255,255,.5);
     
   }
@@ -108,6 +116,7 @@ option{
   }
  
 .boton-secundario{
+    font-family: sans-serif;
     background-color: transparent;
     border-color: transparent;
     color:rgba(199, 199, 199, 0.096);
@@ -124,17 +133,102 @@ option{
 
 @keyframes desbloquear {
   from {color: rgba(199, 199, 199, 0.096); border-bottom:1px solid rgba(97, 91, 91, 0.747);}
-  to {color: white; border-bottom:1px solid white;}
+  to {color: var(--titulos-color); border-bottom:1px solid white;}
 }
 footer{
+    font-family: sans-serif;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 10%;
-    color: #0d1b2e;
+    color: var(--secondary-color);
     text-align: center;
+    margin-bottom: 0px;
     font-size: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
     display: block;
+}
+
+.ajustes{
+  position: absolute;
+  cursor: pointer;
+  right:25px;
+  color: white;
+}
+
+
+.sidenav {
+  height: 90.5%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(17, 17, 17, 0.377);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.sidenav a {
+  text-decoration: none;
+  color: #818181;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 3;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.tituloAjustes{
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 0px;
+  display: block;
+}
+.circulo{
+    width: 70px; 
+    height: 70px; 
+    border-radius: 100%;
+    border-color: rgb(0, 0, 0);
+    color: #ffffff;
+}
+.negro{
+  border-color: white;
+  background-color: #111;
+}
+.azul{
+  background-color: rgb(3, 0, 179);
+}
+.verde{
+  background-color: rgb(16, 161, 23);
+}
+.rojo{
+  background-color: rgb(209, 28, 28);
+}
+.rosa{
+  background-color: rgb(247, 169, 169);
+}
+.amarillo{
+  background-color: rgb(212, 199, 17);
+}
+.blanco{
+  background-color: rgb(248, 248, 248);
 }
